@@ -38,7 +38,7 @@ def authorize():
     git  = oauth.create_client('git')
     token = git.authorize_access_token()
     print(token)
-    resp = git.get('user',token)
+    resp = git.get('user')
     print(resp)
     profile = resp.json()
     print(profile)
