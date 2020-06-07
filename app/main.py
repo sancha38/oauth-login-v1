@@ -15,7 +15,8 @@ git = oauth.register(
     client_secret="3ade3058e2023e0f9ee9700849acbfbcbabc6e02",
     authorize_url="https://github.com/login/oauth/authorize",    
     client_kwargs={'scope': 'user,public_repo'},
-    access_token_url="https://github.com/login/oauth/access_token"
+    access_token_url="https://github.com/login/oauth/access_token",
+    api_base_url = "https://api.github.com/"
 )
 
 @app.route("/") 
