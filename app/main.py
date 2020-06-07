@@ -1,5 +1,5 @@
 
-from flask import Flask,redirect,session
+from flask import Flask,redirect,session,request
 from authlib.integrations.flask_client import OAuth
 from flask import url_for, render_template
 #from authlib.flask.client import OAuth
@@ -35,10 +35,12 @@ def login():
 
 @app.route('/authorize')
 def authorize():
+    p = request.args.to_dict(flat=True)
+    print(p)
     git  = oauth.create_client('git')
     token = git.authorize_access_token()
     print(token)
-    resp = git.get('/user')
+    resp = git.get('user')
     print(resp)
     profile = resp.json()
     print(profile)
