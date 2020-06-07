@@ -39,9 +39,7 @@ def authorize():
     p = request.args.to_dict(flat=True)
     print(p)
     git  = oauth.create_client('git')
-    print(git.client_id)
-    print(git.secret_key)
-    print(git.access_token_url)
+   
     token = git.authorize_access_token()
     print(token)
     resp = git.get('user')
