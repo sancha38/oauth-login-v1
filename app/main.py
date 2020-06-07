@@ -35,9 +35,11 @@ def login():
 
 @app.route('/authorize')
 def authorize():
+
     p = request.args.to_dict(flat=True)
     print(p)
     git  = oauth.create_client('git')
+    print(git)
     token = git.authorize_access_token()
     print(token)
     resp = git.get('user')
