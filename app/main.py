@@ -1,11 +1,12 @@
 
-from flask import Flask,redirect,session,request
+from flask import Flask,redirect,session,request,send_from_directory,render_template
 from authlib.integrations.flask_client import OAuth
 from flask import url_for, render_template
 #from authlib.flask.client import OAuth
 
 
-app = Flask(__name__) 
+app = Flask(__name__,static_url_path='')
+
 app.secret_key = 'yxrtnvdyyioke'
 oauth = OAuth(app) 
 
@@ -18,13 +19,18 @@ git = oauth.register(
     access_token_url="https://github.com/login/oauth/access_token",
     api_base_url = "https://api.github.com/"
 )
+@app.route('/<path:path>')
+def send_js(path):
+    #print(app.static_folder)
+    return send_from_directory(app.static_folder, path)
 
 @app.route("/") 
 def home_view(): 
-    print("session ",session)
-    d = dict(session)
-    print(d)
-    return "<h1>Welcome to Geeks for Geeks</h1>"
+    #print(app.static_folder)
+    print(app.template_folder)
+    return render_template('index.html')
+
+
 
 
 
@@ -38,9 +44,7 @@ def login():
 def authorize():
 
     p = request.args.to_dict(flat=True)
-    print(p)
-    git  = oauth.create_client('git')
-   
+    git  = oauth.create_client('git')   
     token = git.authorize_access_token()
     print(token)
     resp = git.get('user')
