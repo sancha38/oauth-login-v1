@@ -1,0 +1,124 @@
+{
+ "2000": {
+    "levels": {
+      "5": {
+        "dependent_id": 6, 
+        "disable": true, 
+        "id": 5, 
+        "lable": "Process Id", 
+        "type": "input", 
+        "values": {
+          "null": {
+            "20": "2000"
+          }
+        }
+      }, 
+      "6": {
+        "dependent_id": -1, 
+        "disable": false, 
+        "id": 6, 
+        "lable": "Entitlement", 
+        "type": "dropdown", 
+        "values": {
+          "20": {
+            "21": "SBD"
+          }
+        }
+      }
+    }, 
+    "number_level": 1, 
+    "proc_id": "2000", 
+    "proc_name": "LYNX COF"
+},
+ "1000":{
+  "levels": {
+    "1": {
+      "dependent_id": 2, 
+      "disable": true, 
+      "id": 1, 
+      "lable": "Process Id", 
+      "type": "input", 
+      "values": {
+        "null": {
+          "1": "1000"
+        }
+      }
+    }, 
+    "2": {
+      "dependent_id": 3, 
+      "disable": false, 
+      "id": 2, 
+      "lable": "Region", 
+      "type": "dropdown", 
+      "values": {
+        "1": {
+          "2": "ABU", 
+          "3": "APJ", 
+          "4": "EMEA"
+        }
+      }
+    }, 
+    "3": {
+      "dependent_id": 4, 
+      "disable": false, 
+      "id": 3, 
+      "lable": "Sub-Region", 
+      "type": "dropdown", 
+      "values": {
+        "2": {
+          "5": "US-Canada", 
+          "6": "LATAM"
+        }, 
+        "3": {
+          "11": "Direct India", 
+          "7": "CIS India", 
+          "9": "SADMG"
+        }, 
+        "4": {
+          "10": "CIS EMEA", 
+          "8": "DPD"
+        }
+      }
+    }, 
+    "4": {
+      "dependent_id": -1, 
+      "disable": false, 
+      "id": 4, 
+      "lable": "Queue", 
+      "type": "dropdown", 
+      "values": {
+        "10": {
+          "19": "CIS_EMEA"
+        }, 
+        "11": {
+          "17": "APJ India_Direct New"
+        }, 
+        "5": {
+          "12": "ABU_US_Canada_05_ET", 
+          "14": "ABU_US_Canada_05_CT"
+        }, 
+        "6": {
+          "13": "ABU_LATAM_3:00PM_Get_Next"
+        }, 
+        "7": {
+          "15": "APJ_CIS_India_FSD"
+        }, 
+        "8": {
+          "18": "DPD EMEA"
+        }, 
+        "9": {
+          "16": "APJ_SADMG_Received_NBD&SBD"
+        }
+      }
+    }
+  }, 
+  "number_level": 4, 
+  "proc_id": "1000", 
+  "proc_name": "DTD"
+}
+
+}
+
+
+
+  

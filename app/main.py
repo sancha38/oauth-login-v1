@@ -2,7 +2,11 @@
 from flask import Flask,redirect,session,request,send_from_directory,render_template
 from authlib.integrations.flask_client import OAuth
 from flask import url_for, render_template
+from flask import jsonify, request
 #from authlib.flask.client import OAuth
+import json
+import os
+
 
 
 app = Flask(__name__,static_url_path='')
@@ -19,21 +23,6 @@ git = oauth.register(
     access_token_url="https://github.com/login/oauth/access_token",
     api_base_url = "https://api.github.com/"
 )
-@app.route('/<path:path>')
-def send_js(path):
-    #print(app.static_folder)
-    return send_from_directory(app.static_folder, path)
-
-@app.route("/") 
-def home_view(): 
-    #print(app.static_folder)
-    print(app.template_folder)
-    return render_template('index.html')
-
-
-
-
-
 @app.route('/login')
 def login():
     git  = oauth.create_client('git')
@@ -53,3 +42,57 @@ def authorize():
     print(profile)
     # do something with the token and profile
     return redirect('/')
+
+@app.route('/<path:path>')
+def send_js(path):
+    #print(app.static_folder)
+    
+    return send_from_directory(app.static_folder, path)
+
+@app.route("/process/<path:path>") 
+def proc_list(path): 
+    print(path)
+    print(app.static_folder)
+    
+    return render_template('index.html')
+
+
+@app.route("/") 
+def home_view(): 
+    print("home")
+    print(app.static_folder)
+    return render_template('index.html')
+
+@app.route("/api_watch/services/processmeta",methods = ['POST']) 
+def process(): 
+    params = get_params(request)
+    print("process",params)
+    proc_id = params.get("proc_id",-1)
+    filep = os.path.join(app.static_folder,'assets/json/','process.json')
+    print("filep ",filep)
+    with open(filep) as f:
+        data = json.load(f)
+        return jsonify(data.get(proc_id,{}))
+    
+
+
+@app.route("/api_watch/services/processinstance",methods = ['POST']) 
+def step(): 
+    params = get_params(request)
+    print("step",params)
+    proc_id = params.get("process_id",-1)
+    filep = os.path.join(app.static_folder,'assets/json/','step.json')
+    print("filep ",filep)
+    with open(filep) as f:
+        data = json.load(f)
+        d =data.get(proc_id,{})
+        print(d)
+        return jsonify(d)
+
+
+def get_params(request):
+        return request.json if (request.method == 'POST') else request.args
+
+
+
+

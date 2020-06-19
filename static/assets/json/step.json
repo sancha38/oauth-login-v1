@@ -1,0 +1,111 @@
+{
+  "2000":[
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 1, 
+      "step_id": 9, 
+      "step_name": "Find Sourcing Location"
+    }, 
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 2, 
+      "step_id": 10, 
+      "step_name": "Inventory Check With Alternates"
+    }, 
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 3, 
+      "step_id": 11, 
+      "step_name": "createOrder"
+    }, 
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 4, 
+      "step_id": 12, 
+      "step_name": "Acknowledge Order"
+    }, 
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 5, 
+      "step_id": 13, 
+      "step_name": "Issue Goods"
+    }, 
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 6, 
+      "step_id": 14, 
+      "step_name": "Review In-Transit Update"
+    }, 
+    {
+      "level_id": 21, 
+      "proc_id": 2000, 
+      "seq_num": 7, 
+      "step_id": 15, 
+      "step_name": "Record Proof of Delivery"
+    }
+  ],
+  "1000":[
+    {
+      "level_id": 12, 
+      "proc_id": 1000, 
+      "seq_num": 1, 
+      "step_id": 1, 
+      "step_name": "Ship To Address"
+    },
+    {
+      "level_id": 13, 
+      "proc_id": 1000, 
+      "seq_num": 2, 
+      "step_id": 2, 
+      "step_name": "Primary Customer Details"
+    },
+    {
+      "level_id": 15, 
+      "proc_id": 1000, 
+      "seq_num": 3, 
+      "step_id": 3, 
+      "step_name": "Group Country"
+    },
+    {
+      "level_id": 18, 
+      "proc_id": 1000, 
+      "seq_num": 4, 
+      "step_id": 4, 
+      "step_name": "On-Site Tech Request"
+    },
+    {
+      "level_id": 16, 
+      "proc_id": 1000, 
+      "seq_num": 5, 
+      "step_id": 5, 
+      "step_name": "Tag Customer Ownership"
+    },
+    {
+      "level_id": 19, 
+      "proc_id": 1000, 
+      "seq_num": 6, 
+      "step_id": 6, 
+      "step_name": "Failure Description & Troubleshooting"
+    },
+    {
+      "level_id": 14, 
+      "proc_id": 1000, 
+      "seq_num": 7, 
+      "step_id": 7, 
+      "step_name": "Group Notes"
+    },
+    {
+      "level_id": 17, 
+      "proc_id": 1000, 
+      "seq_num": 8, 
+      "step_id": 8, 
+      "step_name": "Status History"
+    }
+  ]
+}
