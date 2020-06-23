@@ -21,7 +21,8 @@
         "type": "dropdown", 
         "values": {
           "20": {
-            "21": "SBD"
+            "21": "SBD",
+            "22": "NBD"
           }
         }
       }
